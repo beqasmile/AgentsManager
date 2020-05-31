@@ -40,6 +40,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.chkYes = new System.Windows.Forms.CheckBox();
             this.txtNo = new System.Windows.Forms.CheckBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -124,7 +125,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(96, 284);
+            this.button1.Location = new System.Drawing.Point(55, 354);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(142, 44);
             this.button1.TabIndex = 10;
@@ -155,11 +156,19 @@
             this.txtNo.UseVisualStyleBackColor = true;
             this.txtNo.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(65, 237);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 13;
+            // 
             // FormAgent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(345, 450);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtNo);
             this.Controls.Add(this.chkYes);
             this.Controls.Add(this.button1);
@@ -195,5 +204,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox chkYes;
         private System.Windows.Forms.CheckBox txtNo;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

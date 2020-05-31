@@ -41,6 +41,9 @@ namespace AgentsManager
             agent.IndependedAgent = !txtNo.Checked;
 
             allAgents.Add(agent.Id.ToString(), agent);
+
+            this.Close();
+            //this.Hide();\
             //allAgents.Add(2, textBox2.Text);
             //allAgents.Add(3, textBox3.Text);
             //agent.Add(4, textBox4.Text);

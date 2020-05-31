@@ -16,6 +16,12 @@ namespace AgentsManager
         public Form1()
         {
             InitializeComponent();
+            dataGridAgents.DataSource = allAgents.Values.ToList() ;
+           // DataGridViewColumn dataColumnAgentName = new DataGridViewColumn();
+            //dataColumnAgentName.DataPropertyName = "AgentName";
+            //dataColumnAgentName.HeaderCell = new DataGridViewColumnHeaderCell();
+            
+           // dataGridAgents.Columns.Add(dataColumnAgentName);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
