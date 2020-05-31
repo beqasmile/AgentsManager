@@ -12,6 +12,7 @@ namespace AgentsManager
 {
     public partial class Form1 : Form
     {
+        public Dictionary<string, Agent> allAgents = new Dictionary<string, Agent>();
         public Form1()
         {
             InitializeComponent();
@@ -19,7 +20,8 @@ namespace AgentsManager
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Form formAgent = new Form();
+            FormAgent formAgent = new FormAgent();
+            formAgent.allAgents = this.allAgents;
             formAgent.Show();
         }
     }
