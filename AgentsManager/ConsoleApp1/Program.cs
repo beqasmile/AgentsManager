@@ -26,36 +26,47 @@ namespace ConsoleApp1
             Color _color = System.Drawing.ColorTranslator.FromHtml("427983");
 
 
-
-            string  fileNameRead = @"C:\dev\16day\06_CS_C_Object_OrientedOutput.pptx";
-            string fileNameWrite = @"C:\dev\16day\06_CS_C_Object_OrientedSaved.pptx";
-
-            
-
-
-
-            FileStream fs = File.OpenRead(fileNameRead);
-
-            FileStream fsOut = File.OpenWrite(fileNameWrite);
-            
-
-            byte[] buf = new byte[1024];
-            int c;
-
-            c = fs.Read(buf, 0, buf.Length);
-            while (c > 0)
+            DirectoryInfo dSource = new DirectoryInfo(@"C:\dev\16day\source");//Assuming Test is your Folder
+            FileInfo[] Files = dSource.GetFiles("*.*"); //Getting Text files
+            string str = "";
+            foreach (FileInfo file in Files)
             {
-                for (int i=0; i< buf.Length; i++)
-                {
-                    buf[i] = (byte)(buf[i] - 3);
-                }
-                fsOut.Write(buf, 0, c);
-                //Console.WriteLine(Encoding.UTF8.GetString(buf, 0, c));
+                string fileNameRead = file.FullName;
+
+                string fileNameWrite = @"C:\dev\16day\dest\" + file.Name ;
+
+                FileStream fs = File.OpenRead(fileNameRead);
+
+                FileStream fsOut = File.OpenWrite(fileNameWrite);
+
+
+                byte[] buf = new byte[1024];
+                int c;
+
                 c = fs.Read(buf, 0, buf.Length);
+                while (c > 0)
+                {
+
+                    fsOut.Write(buf, 0, c);
+                    //Console.WriteLine(Encoding.UTF8.GetString(buf, 0, c));
+                    c = fs.Read(buf, 0, buf.Length);
+                }
+
+                fsOut.Close();
             }
 
+           
 
-            fsOut.Close();
+
+
+
+
+
+
+
+
+
+
             Console.ReadKey();
 
         }
